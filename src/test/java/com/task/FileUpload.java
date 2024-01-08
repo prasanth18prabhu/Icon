@@ -5,10 +5,13 @@ import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
+import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.basepackage.BaseClass;
@@ -38,8 +41,10 @@ public class FileUpload extends BaseClass {
 		BaseClass.loadUrl("https://practice.expandtesting.com/upload");
 
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		
 
 		WebElement button = driver.findElement(By.xpath("//form[@method='POST']//div"));
+		
 
 		button.click();
 

@@ -67,4 +67,63 @@ public class DynamicTable extends BaseClass{
 		}
 
 	}
+	
+	@Test
+	public static void ParticularValue() {
+
+		BaseClass.browserLaunch();
+		
+		
+		
+		BaseClass.loadUrl("https://practice.expandtesting.com/dynamic-table");
+
+		List<WebElement> rows = driver.findElements(By.tagName("tr"));
+		for (int i = 0; i <rows.size() ; i++) {
+		    WebElement row = rows.get(i);
+		    List<WebElement> column = row.findElements(By.tagName("td"));
+		    for (int j = 0; j < column.size(); j++) {
+		        WebElement data = column.get(j);
+		       String text = data.getText();
+		       if(text.equals("")){
+		    	   column.get(2).getText();
+		       }
+		        
+//		        if(i==2&&j==3) {
+//		        	 String text = data.getText();
+//		        	 System.out.println(text);
+//		        }
+		        	
+		    }
+		    
+
+		}
+	}
+	
+	
+	@Test
+	public static void Value() {
+
+		BaseClass.browserLaunch();
+		
+		
+		
+		BaseClass.loadUrl("https://qavbox.github.io/demo/webtable/");
+
+		WebElement table = driver.findElement(By.id("table01"));
+		List<WebElement> rows = table.findElements(By.tagName("tr"));
+		for(int i=0;i<rows.size();i++){
+		WebElement row = rows.get(i);
+		List<WebElement> columns = row.findElements(By.tagName("td"));
+		for(int j=0;j<columns.size();j++){
+		String data = columns.get(j).getText();
+		if(data.equals("QC ALM")){
+		String output = columns.get(1).getText();
+		System.out.println(output);
+		}
+		}
+		
+		}
+		
+	}
+	
 }

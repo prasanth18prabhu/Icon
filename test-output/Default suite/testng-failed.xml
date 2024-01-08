@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.task.DatePicker2">
+      <class name="com.task.DynamicTable">
         <methods>
-          <include name="datePicker2"/>
+          <include name="dataTable"/>
         </methods>
-      </class> <!-- com.task.DatePicker2 -->
+      </class> <!-- com.task.DynamicTable -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

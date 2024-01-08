@@ -6,7 +6,6 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -14,19 +13,17 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.MediaEntityBuilder;
 import com.basepackage.BaseClass;
 
-public class DatePicker2 extends BaseClass {
-	
-	@Test
+public class Datepicker2 extends BaseClass{
 	public static void datePicker2() throws IOException {
 		 
-		
+	
 		
 		BaseClass.browserLaunch();
-		
 		BaseClass.loadUrl("https://jqueryui.com/datepicker/");
  
 		WebElement frame = driver.findElement(By.xpath("//iframe[@class='demo-frame']"));
@@ -52,7 +49,7 @@ public class DatePicker2 extends BaseClass {
 		String targetD = sdf.format(targetDate);
 		System.out.println("Target Date is:"+targetD);
 		
-		
+		test.info("Selected the date as Minus one day, one week, one year ");
 		
  
 		String exMon = targetD.split("/")[1].trim();
@@ -70,7 +67,7 @@ public class DatePicker2 extends BaseClass {
         try {
 			SelectDate1(exD, month3, exYr );   // used try and catch block
 			
-			
+			test.info("Date Picked as per requirement");
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -84,18 +81,24 @@ public class DatePicker2 extends BaseClass {
 			Assert.assertTrue(true);
  
 			BaseClass.screenShot(
-					"C:\\Users\\VDI003\\eclipse-workspace\\45\\PS\\Icon\\src\\test\\resources\\Screenshots\\DatePicker2Pass.jpeg");
+					"C:\\Users\\amanickam\\eclipse-workspace\\SampleProject1\\ScreenShot\\DatePicker2.jpeg");
  
-			
+			test.pass("Date Picked",
+					MediaEntityBuilder.createScreenCaptureFromPath(
+							"C:\\Users\\amanickam\\eclipse-workspace\\SampleProject1\\ScreenShot\\DatePicker2.jpeg")
+							.build());
  
 		} else {
  
 			Assert.assertTrue(false);
  
 			BaseClass.screenShot(
-					"C:\\Users\\VDI003\\eclipse-workspace\\45\\PS\\Icon\\src\\test\\resources\\Screenshots\\DatePicker2Fail.jpeg");
+					"C:\\Users\\amanickam\\eclipse-workspace\\SampleProject1\\ScreenShot\\DatePicker2.jpeg");
  
-			
+			test.fail("Date not picked",
+					MediaEntityBuilder.createScreenCaptureFromPath(
+							"C:\\Users\\amanickam\\eclipse-workspace\\SampleProject1\\ScreenShot\\DatePicker2.jpeg")
+							.build());
  
 		}
 	}
@@ -136,4 +139,4 @@ public class DatePicker2 extends BaseClass {
 }
 	
 }
-
+}

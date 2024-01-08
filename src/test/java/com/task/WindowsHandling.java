@@ -28,7 +28,7 @@ public class WindowsHandling extends BaseClass {
 
 		for (String window : windowHandle) {
 
-			if (!parentWindow.equals(windowHandle)) {
+			if (!parentWindow.equals(window)) {
 
 				driver.switchTo().window(window);
 
@@ -51,6 +51,7 @@ public class WindowsHandling extends BaseClass {
 		driver.findElement(By.xpath("(//button[contains(@class,'button is-fullwidth')])[2]")).click();
 
 		Set<String> windowHandle = driver.getWindowHandles();
+		
 
 		List<String> li = new ArrayList<String>(windowHandle);
 //		

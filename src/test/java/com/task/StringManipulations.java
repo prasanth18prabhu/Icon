@@ -145,7 +145,7 @@ public class StringManipulations {
 	@Test
 	public void removeDuplicateAscending() {
 
-		int numbers[] = { 10000, 10, 10, 5, 5, 20, 20, 100, 50, 60, 60, 70 };
+		int numbers[] = { 10000, 10, 10, 5, 5, 20, 20, 100, 50, 60, 60, 70 },temp;
 
 		Set<Integer> set = new TreeSet<>();
 
@@ -155,12 +155,43 @@ public class StringManipulations {
 
 		}
 
-		for (Integer removedData : set) {
+		Object[] ar = set.toArray();
 
-			System.out.println(removedData);
+		int b[] = new int[ar.length];
+
+		for (int i = 0; i < ar.length; i++) {
+
+			b[i] = (int) ar[i];
 
 		}
+
+		for (int i = 0; i < b.length; i++) {
+
+			for (int j = i + 1; j < b.length; j++) {
+
+				if (b[i] > b[j]) {
+
+					temp = b[i];
+
+					b[i] = b[j];
+
+					b[j] = temp;
+
+				}
+
+			}
+
+		}
+
+		for (int i = 0; i < b.length; i++) {
+
+			System.out.println(b[i]);
+
+		}
+
 	}
+
+	
 
 	@Test
 	public void removeDuplicateDescending() {
@@ -174,9 +205,10 @@ public class StringManipulations {
 			s.add(numbers[i]);
 
 		}
+		
 
 		Object[] ar = s.toArray();
-
+		
 		int b[] = new int[ar.length];
 
 		for (int i = 0; i < ar.length; i++) {

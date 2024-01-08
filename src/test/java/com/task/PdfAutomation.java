@@ -41,6 +41,8 @@ public class PdfAutomation extends BaseClass {
 		PDDocument pdDocument = PDDocument.load(bf);
 
 		int numberOfPages = pdDocument.getNumberOfPages();
+		
+		
 
 		System.out.println(numberOfPages);
 
@@ -80,6 +82,7 @@ public class PdfAutomation extends BaseClass {
 		PDFTextStripper pdfStripper = new PDFTextStripper();
 
 		pdfStripper.setStartPage(2);
+		pdfStripper.setEndPage(2);
 
 		String pdfTxt = pdfStripper.getText(pdDocument);
 
