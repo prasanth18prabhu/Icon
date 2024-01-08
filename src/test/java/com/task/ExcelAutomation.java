@@ -16,7 +16,9 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.testng.annotations.Test;
 
-public class ExcelAutomation {
+import com.basepackage.BaseClass;
+
+public class ExcelAutomation extends BaseClass{
 	
 	
 	@Test
@@ -131,7 +133,7 @@ public class ExcelAutomation {
 
 			return retn;
 
-		} catch (Exception e) {
+		} catch (IOException e) {
 
 			System.out.println(e.getMessage());
 
@@ -172,7 +174,7 @@ public class ExcelAutomation {
 
 			fos.close();
 
-		} catch (Exception e) {
+		} catch (IOException e) {
 
 			System.out.println(e.getMessage());
 
@@ -207,7 +209,7 @@ public class ExcelAutomation {
 
 			fos.close();
 
-		} catch (Exception e) {
+		} catch (IOException e) {
 
 			System.out.println(e.getMessage());
 
@@ -293,7 +295,7 @@ public class ExcelAutomation {
 
 				}
 			}
-		} catch (Exception e) {
+		} catch (IOException e) {
 
 			System.out.println(e.getMessage());
 
