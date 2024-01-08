@@ -22,5 +22,6 @@ public static void main(String[] args) {
 //    BufferedImage croppedimage = fullimage.getSubimage(0, 0, Dimension.width, Dimension.height);
 //    File des = new File("C:\\Users\\Screenshot\\A3.png");
 //    ImageIO.write(croppedimage, "png", des);
+  // 
 }
 }
